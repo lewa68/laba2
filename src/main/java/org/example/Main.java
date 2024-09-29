@@ -3,7 +3,7 @@ package org.example;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double y;
         int a,b,c,d;
@@ -19,28 +19,17 @@ public class Main {
             System.out.println("1)triangle\n2)distance\n3)powerLoop\n4)power\n5)tribonacci");
             int t = scanner.nextInt();
             switch (t) {
-                case 1:
-                    System.out.println(triangle(a, b, c));
-                    break;
-                case 2:
-                    System.out.printf("%.2f", distance(a, b, c, d));
-                    break;
-                case 3:
-                    System.out.println(powerLoop(a, b));
-                    break;
-                case 4:
-                    System.out.println(power(a, b));
-                    break;
-                case 5:
-                    System.out.println("n="+d);
+                case 1 -> System.out.println(triangle(a, b, c));
+                case 2 -> System.out.printf("%.2f", distance(a, b, c, d));
+                case 3 -> System.out.println(powerLoop(a, b));
+                case 4 -> System.out.println(power(a, b));
+                case 5 -> {
+                    System.out.println("n=" + d);
                     System.out.println(tribonacci(25));
-                    break;
-                case 0:
-                    e=-1;
-                    break;
-                default:
-                    break;
-
+                }
+                case 0 -> e = -1;
+                default -> {
+                }
             }
         }
     }
@@ -55,8 +44,7 @@ public class Main {
 
     public static double distance(float x1, float x2, float y1, float y2) {
         System.out.println("--------------------\n"+"x1=" + x1 + "\nx2=" + x2 + "\ny1=" + y1+"\ny2="+y2);
-        double dist;
-        return dist=Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
+        return Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
     }
 
     public static double powerLoop(float a, int n) {
