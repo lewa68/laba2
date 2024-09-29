@@ -36,9 +36,7 @@ public class Main {
 
     public static boolean triangle(int a, int b, int c) {
         System.out.println("--------------------\n"+"a=" + a + "\nb=" + b + "\nc=" + c);
-        if (a + b <= c) return false;
-        else if (a + c <= b) return false;
-        else if (b + c <= a) return false;
+        if ((a + b <= c)||(a + c <= b)||(b + c <= a)) return false;
         else return true;
     }
 
